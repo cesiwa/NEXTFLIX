@@ -5,7 +5,7 @@ import Link from 'next/link'
 function Footer() {
   return (
     <footer className={styles.footer}>
-      Made with ❤️ by&nbsp;
+      Made with ❤️ 
       <Link href="https://www.linkedin.com/in/silamahim/" target="_blank">
         Sıla Mahim
       </Link>
