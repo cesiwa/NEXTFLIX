@@ -1,10 +1,22 @@
 import React from 'react'
+import Movies from '@/mocks/movies.json'
 import MovieContainer from '@/containers/movie'
+import { notFound } from 'next/navigation'
 
-function MoviePage({ params } : { params: { id: string } }) {
-    console.log(params)
+
+ function MoviePage({ params, searchParams} : { params: { id: string }, searchParams : {error: boolean}} ) {
+  console.log(searchParams)
+
+  const movieDetail = Movies.results.find((movie) => {movie.id.toString() === params.id})
+  if(movieDetail){
+    notFound();
+  }
+  if(searchParams.error){
+    throw new Error('An error occurred')
+  }
+
   return (
-    <div>MoviePage</div>
+   <MovieContainer movie={movieDetail || { poster_path: '', title: '', overview: '' }} isCompact={false}/>
   )
 }
 
