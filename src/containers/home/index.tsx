@@ -24,6 +24,7 @@ function HomeContainer({ selectedCategory }: { selectedCategory: { id: string, m
       )}
       <MoviesSection title="Popular Movies" movies={Movies.results.slice(1, 6)}/>
       <MoviesSection title="Your Favorites" movies={Movies.results.slice(7, 13)}/>
+      
     </div>
   )
 }
