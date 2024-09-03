@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 
  function MoviePage({ params, searchParams} : { params: { id: string }, searchParams : {error: boolean}} ) {
-  console.log(searchParams)
+
 
   const movieDetail = Movies.results.find((movie) => {movie.id.toString() === params.id})
   if(movieDetail){
